@@ -84,7 +84,7 @@ params:
       - image: lbs.jpg
         subtitle: student LBS
         title: About Me
-        url: blogs/aliquam
+        url: blogs/ciao
       - image: pic02.jpg
         subtitle: Feugiat Amet Tempus
         title: Risk Retun of DJIA 
@@ -108,11 +108,6 @@ params:
   two:
     buttonText: Get Started
     enable: yes
-    subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
-      \r\n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \r\n    Pellentesque
-      condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia
-      pellentesque lorem ipsum dolor. \r\n    Nullam et orci eu lorem consequat tincidunt.
-      Vivamus et sagittis libero.\r\n    Mauris aliquet magna magna sed nunc rhoncus
-      amet pharetra et feugiat tempus."
-    title: Massa libero
+    subtitle: "Having the basics—a good bed to sleep in, good relationships, good food, and good sex—is most important, and those things don’t get much better when you have a lot of money or much worse when you have less. And the people one meets at the top aren’t necessarily more special than those one meets at the bottom or in between." Cit. Ray Dalio
+    title: Markets as a Passion
     url: blogs
