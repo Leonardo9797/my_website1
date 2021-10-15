@@ -81,10 +81,10 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: pic01.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Aliquam
-        url: blogs/aliquam
+      - image: lbs.jpg
+        subtitle: My story
+        title: A sailor passionate about business
+        url: blogs/my_story
       - image: pic02.jpg
         subtitle: Feugiat Amet Tempus
         title: Tempus
@@ -108,6 +108,6 @@ params:
   two:
     buttonText: Get Started
     enable: yes
-    subtitle: "Having the basics - a good bed to sleep in, good relationships, good food, and good sex - is most important, and those things don’t get much better when you have a lot of money or much worse when you have less. And the people one meets at the top aren’t necessarily more special than those one meets at the bottom or in between. Cit. Ray Dalio"
+    subtitle: "Having the basics - a good bed to sleep in, good relationships, good food, and good sex - is most important, and those things don’t get much better when you have a lot of money or much worse when you have less. And the people one meets at the top aren’t necessarily more special than those one meets at the bottom or in between. Ray Dalio"
     title: Markets as a Passion
     url: blogs
