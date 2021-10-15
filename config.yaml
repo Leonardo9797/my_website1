@@ -10,23 +10,23 @@ params:
     subtitle: |-
       A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
       AND RELEASED UNDER THE CREATIVE COMMONS.
-    title: Hi, my name is Leonardo
+    title: Hi, my name is Leonardo Riolo
   blog: {}
   contact:
     address:
-      - city: London
+      - city: London  
         country: United Kingdom
-        street: Regent's Park, NW1 4SA
-        title: Contact address
+        street: Regent's Park
+        title: NW14SA 
     buttonClear: Clear
     buttonSend: Send message
     email:
       - email: lriolo.mfa2022@london.edu
-        title: LBS Email
+        title: Email
     enable: yes
     phone:
-      - phone: (39) 347-3884881
-        title: Mobile Phone
+      - phone: (39) 3483987382
+        title: Phone
   custom_css: []
   custom_js: []
   description: Your description
@@ -48,9 +48,9 @@ params:
       - icon: fa-facebook
         label: Facebook
         url: https://www.facebook.com/leonardo.riolo.1
-#      - icon: fa-instagram
-#        label: Instagram
-#        url: https://www.instagram.com
+      #- icon: fa-instagram
+      #  label: Instagram
+      #  url: https://www.instagram.com
       - icon: fa-github
         label: GitHub
         url: https://github.com/Leonardo9797
@@ -81,14 +81,14 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: lbs.jpg
-        subtitle: student LBS
-        title: About Me
-        url: blogs/ciao
+      - image: pic01.jpg
+        subtitle: Ipsum Dolor Sit Amet
+        title: Aliquam
+        url: blogs/aliquam
       - image: pic02.jpg
         subtitle: Feugiat Amet Tempus
-        title: Risk Retun of DJIA 
-        url: blogs/risk_return
+        title: Tempus
+        url: blogs/tempus
       - image: pic03.jpg
         subtitle: Lorem Etiam Nullam
         title: Magna
@@ -108,6 +108,6 @@ params:
   two:
     buttonText: Get Started
     enable: yes
-    subtitle: "Having the basics—a good bed to sleep in, good relationships, good food, and good sex—is most important, and those things don’t get much better when you have a lot of money or much worse when you have less. And the people one meets at the top aren’t necessarily more special than those one meets at the bottom or in between." Cit. Ray Dalio
+    subtitle: "Having the basics - a good bed to sleep in, good relationships, good food, and good sex - is most important, and those things don’t get much better when you have a lot of money or much worse when you have less. And the people one meets at the top aren’t necessarily more special than those one meets at the bottom or in between. Cit. Ray Dalio"
     title: Markets as a Passion
     url: blogs
