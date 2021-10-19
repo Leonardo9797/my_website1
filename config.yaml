@@ -85,10 +85,12 @@ params:
         subtitle: A sailor passionate about business
         title: My story
         url: blogs/my_story
-      - image: dow-jones.jpg
-        subtitle: Index Performance
-        title: DJIA 
+        
+      - image: r_pic.jpg
+        subtitle: The first steps
+        title: Learning R 
         url: blogs/risk_return
+        
       - image: pic01.jpg
         subtitle: The first steps
         title: Learning R
