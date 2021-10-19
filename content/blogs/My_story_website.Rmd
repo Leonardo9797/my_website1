@@ -51,15 +51,20 @@ library(janitor)
 
 ## Birth
 
-I was born in **Sardinia**, a main Italian island in the centre of the Mediterranean sea. I was born in a small village called **Lanusei** on the 9th of August, 1997. My mother's family comes from Sardinia, and my mother was there for holidays when I was born. My father's name is Silvio, lawyer, and my mother's name is Stefania, fashion agent.I also have a sister, named Valentina.
+I was born in **Sardinia**, a main Italian island in the centre of the Mediterranean sea. I was born in a small village called **Lanusei** on the 9th of August, 1997. My mother's family comes from Sardinia, and my mother was there for holidays when I was born. For better or for worse, I now define myself half Sardinian, with the pride to feel home also in such a beatiful place like the second biggest Italian island. My father's name is Silvio, and he is a hyper passionate cyclist, and my mother's name is Stefania, a person who, in her free time, has the simple hobby to do iromen around the world.I also have a sister, named Valentina, with whom I have a very strong relationship and who currently lives in Milan, starting her career as a designer.
 
 ## Early Life
-My mother and father were living in **Milan** when I was born, so there is where I was raised. However, until age 5 when I started going to school, I spent a lot of time in Sardinia where my grandparents would take care of me. This is the reason for my big passion for the sea and the reason why I got so passionate about sailing. 
+My mother and father were living in **Milan** when I was born, so there is where I was raised. However, until age 5 when I started going to school, I spent a lot of time in Sardinia where my grandparents would take care of me. This is the reason for my big passion for the sea and the reason why I got so passionate about sailing. Even after starting school, my sister and I were lucky enough to keep spending a huge amount of time in Sardinia, living in the nature and far from the noisy city that Milan is. Besides usual visits over the year, our summers in Sardinia were always at least three months long. I have a great memory of those years, and those are responsible for my passion for the nature and the countryside.  
 
 ## Teenagerhood
-As explained above, I was raised in Milan, where I attended all my primary and secondary studies. I attended a Scienfic high school, called _Liceo Scienfico Cremona_.During my high school studies, I also went in exchange to **Australia**, where I stayed for six months hosted by my host parents Fiona and Tony. During high school, I practised sailing at a competitive level, as part of the [LNI](https://www.leganavale.mi.it/) sailing junior team. 
+Milan is where I attended all my primary and secondary studies. I attended a Scienfic high school, called _Liceo Scienfico Cremona_, where my main subjects were Maths, Phisics, Chemistry, History, Philosophy, and Italian Literature. During my high school studies, I also did an exchange semester in **Australia**, more specifically in Warrnambool, a city two hours by car from Melbourne, on the south coast.I stayed there for six months hosted by my host parents Fiona and Tony, getting to know the culture and lifestyle of Aussies! During high school, I practiced sailing at a competitive level, as part of the [LNI](https://www.leganavale.mi.it/) sailing junior team. As mentioned above, sailing has been, and still is, my greatest passion. I have started sailing when I was 7 years old. I then joined the LNI team when I was 11, sailing in Optimist at the beginning. Growing up I switched to Laser, and I kept competing with my team around Italy. Unfortunately, I had to stop competiting after an injury at my back when I was 15. Nevertheless, after a period of stop to recover, I restarted sailing in my free time once in a while, finally becoming in instructor at a sailing school located in north of Sardinia. Teaching children and young adults how to sail has been one of the most rewarding experiences of my life so far. Here you can see a picture of 'Leonardo the Instructor' in action with his counsin. Children have to be used to capsize, and unfortunately it is us instructors who have to teach them the practice!
+```{r}
+knitr::include_graphics(here::here("themes","forty","static","img", "sailing.jpeg"), error = FALSE)
+```
+
 
 ## University studies
+
 Once I finished my high school in Milan, I chose to study _business administration_ at [IE University](https://www.ie.edu/university/) in **Spain, Madrid**. Here I studied a wide array of subjects, among which:
 
 1. Economics
@@ -68,4 +73,11 @@ Once I finished my high school in Milan, I chose to study _business administrati
 
 3. Marketing
 
+Over my studies I increasingly became interested in finance. I started learning more about this subject by myself, and I started investing together with a university friend of mine. We invested small amounts, but eventually we started investing also besides external investors, something that made us feel proud about and even more committed to this discipline. 
+
+At IE I had the chance to meet people from all around the world and get to know the beautifull place that Spain is. Madrid was an incredible city to live in, full of energy and interesting thing to do. I graduated in July 2021. 
+
+```{r}
+knitr::include_graphics(here::here("themes","forty","static","img", "graduation.jpeg"), error = FALSE)
+```
 
