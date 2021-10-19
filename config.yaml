@@ -89,7 +89,7 @@ params:
         subtitle: Index Performance
         title: DJIA 
         url: blogs/risk_return
-      - image: R_pic.jpg
+      - image: pic01.jpg
         subtitle: The first steps
         title: Learning R
         url: blogs/beginnings_R
