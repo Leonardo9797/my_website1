@@ -1,0 +1,158 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2021-10-19"
+description: The first excercise we did to learn R # the title that will show up once someone gets to this page
+draft: false
+image: R_pic.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
+keywords: ""
+slug: beginnings_R # slug is the shorthand URL address... no spaces plz
+title: Learning to use R
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="where-do-people-drink-the-most-beer-wine-and-spirits" class="section level1">
+<h1>Where Do People Drink The Most Beer, Wine And Spirits?</h1>
+<p>Here we uploaded our first dataset. Thanks to Professor Kostis, the first dataset was about alchool and spirits, so it was an enjoyable first dataset to look at!</p>
+<pre class="r"><code>library(fivethirtyeight)
+data(drinks)</code></pre>
+<p>One of the first simple tasks that was given to us was to use the glimpse function. This allowed us to look at the dataset’s variables in a more comprehensive way.</p>
+<pre class="r"><code>glimpse(drinks)</code></pre>
+<pre><code>## Rows: 193
+## Columns: 5
+## $ country                      &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Albania&quot;, &quot;Algeria&quot;, &quot;And~
+## $ beer_servings                &lt;int&gt; 0, 89, 25, 245, 217, 102, 193, 21, 261, 2~
+## $ spirit_servings              &lt;int&gt; 0, 132, 0, 138, 57, 128, 25, 179, 72, 75,~
+## $ wine_servings                &lt;int&gt; 0, 54, 14, 312, 45, 45, 221, 11, 212, 191~
+## $ total_litres_of_pure_alcohol &lt;dbl&gt; 0.0, 4.9, 0.7, 12.4, 5.9, 4.9, 8.3, 3.8, ~</code></pre>
+<pre class="r"><code>levels(drinks$beer_servings)</code></pre>
+<pre><code>## NULL</code></pre>
+<p>Here we made our first graph. In this graph we showed the 25 countries where the most consumption of beer takes place. In this graph we explored some features of ggplot and managed to order countries from top (highest beer consumption) to bottom (lowest beer consumption among the highest 25).</p>
+<pre class="r"><code>drinks %&gt;%
+  slice_max(order_by = beer_servings, n=25) %&gt;% 
+  ggplot(aes(x=beer_servings, y=reorder(country, beer_servings)))+
+  geom_col(colour=&quot;black&quot;, fill=&quot;gold&quot;)+
+  labs(
+    title=&quot;25 highest beer servings countries&quot;,
+    x=&quot;Beer Servings&quot;,
+    y=&quot;Country&quot;
+  )</code></pre>
+<p><img src="/blogs/Beginnings_R_files/figure-html/beer_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>  NULL</code></pre>
+<pre><code>## NULL</code></pre>
+<p>Here we did the same, but with Wine!</p>
+<pre class="r"><code># YOUR CODE GOES HERE
+drinks %&gt;%
+  slice_max(order_by = wine_servings, n=25) %&gt;% 
+  ggplot(aes(x=wine_servings, y=reorder(country, wine_servings)))+
+  geom_col(colour=&quot;black&quot;,fill=&quot;red&quot; )+
+  labs(
+    title=&quot;25 highest wine servings countries&quot;,
+    x=&quot;Wine Servings&quot;,
+    y=&quot;Country&quot;
+  )</code></pre>
+<p><img src="/blogs/Beginnings_R_files/figure-html/wine_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>  NULL</code></pre>
+<pre><code>## NULL</code></pre>
+<p>From these graphs we can notice that, first of all, countries the drink most beer tend to not be the ones that drink the most wine. Also, I was honestly not expecting a country like Namibia to be at the top of the most beer_servings countries in the world. But as our professor wisely says: “Don’t let you bias into the data!”</p>
+</div>
+<div id="challenge-2-opinion-polls-for-the-2021-german-elections" class="section level1">
+<h1>Challenge 2: Opinion polls for the 2021 German elections</h1>
+<p>After hours spent crying on R’s errors and blaming whoever played a part inventing the computer, we finally arrived to our last excercise of our first homework: Challenge 2! Here we were supposed to download data about the opinion polling for the 2021 German federal election and reproduce a graph similar ro the one produced by the Guardian in the following article: :<a href="https://www.theguardian.com/world/2021/aug/20/german-election-poll-tracker-who-will-be-the-next-chancellor" class="uri">https://www.theguardian.com/world/2021/aug/20/german-election-poll-tracker-who-will-be-the-next-chancellor</a></p>
+<pre class="r"><code>url &lt;- &quot;https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_German_federal_election&quot;
+
+# similar graphs and analyses can be found at 
+# https://www.theguardian.com/world/2021/jun/21/german-election-poll-tracker-who-will-be-the-next-chancellor
+# https://www.economist.com/graphic-detail/who-will-succeed-angela-merkel
+
+
+# get tables that exist on wikipedia page 
+tables &lt;- url %&gt;% 
+  read_html() %&gt;% 
+  html_nodes(css=&quot;table&quot;)
+
+
+# parse HTML tables into a dataframe called polls 
+# Use purr::map() to create a list of all tables in URL
+polls &lt;- map(tables, . %&gt;% 
+             html_table(fill=TRUE)%&gt;% 
+             janitor::clean_names())
+
+
+# list of opinion polls
+german_election_polls &lt;- polls[[1]] %&gt;% # the first table on the page contains the list of all opinions polls
+  slice(2:(n()-1)) %&gt;%  # drop the first row, as it contains again the variable names and last row that contains 2017 results
+  mutate(
+         # polls are shown to run from-to, e.g. 9-13 Aug 2021. We keep the last date, 13 Aug here, as the poll date
+         # and we extract it by picking the last 11 characters from that field
+         end_date = str_sub(fieldwork_date, -11),
+         
+         # end_date is still a string, so we convert it into a date object using lubridate::dmy()
+         end_date = dmy(end_date),
+         
+         # we also get the month and week number from the date, if we want to do analysis by month- week, etc.
+         month = month(end_date),
+         week = isoweek(end_date)
+         )</code></pre>
+<pre class="r"><code>head(german_election_polls)</code></pre>
+<pre><code>## # A tibble: 6 x 16
+##   polling_firm     fieldwork_date samplesize abs   union   spd  af_d   fdp linke
+##   &lt;chr&gt;            &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 2021 federal el~ 26 Sep 2021    –          23.4   24.1  25.7  10.3  11.5   4.9
+## 2 Wahlkreisprogno~ 22–24 Sep 2021 1,400      –      22.5  25.5  11    12     7  
+## 3 Ipsos            22–23 Sep 2021 2,000      –      22    26    11    12     7  
+## 4 Forschungsgrupp~ 22–23 Sep 2021 1,273      –      23    25    10    11     6  
+## 5 Forsa            20–23 Sep 2021 2,002      26     22    25    10    12     6  
+## 6 Allensbach       16–23 Sep 2021 1,554      –      25    26    10    10.5   5  
+## # ... with 7 more variables: grune &lt;dbl&gt;, fw &lt;chr&gt;, others &lt;chr&gt;, lead &lt;chr&gt;,
+## #   end_date &lt;date&gt;, month &lt;dbl&gt;, week &lt;dbl&gt;</code></pre>
+<pre class="r"><code>poll&lt;- as.data.frame(german_election_polls)
+poll &lt;- poll[complete.cases(poll), ]
+clean_data &lt;- poll %&gt;% select(-c(1,2,3,4,11,12,13,15,16)) 
+  
+library(reshape2) #cardinal sin against dplyr
+mdf &lt;- melt(clean_data,id.vars=&quot;end_date&quot;)
+
+col&lt;-c(&quot;union&quot;=&quot;black&quot;,&quot;spd&quot;=&quot;red&quot;,&quot;af_d&quot;=&quot;blue&quot;,&quot;grune&quot;=&quot;green&quot;,&quot;linke&quot;=&quot;purple&quot;,&quot;fdp&quot;=&quot;yellow&quot;)
+
+ggplot(mdf, aes(x = end_date, y = value, color = variable, group = variable)) + 
+  geom_point(alpha = 0.5) +
+  geom_ma(ma_fun  = SMA, n = 10, linetype = &quot;solid&quot;) +
+  scale_color_manual(values=col) +
+  #scale_linetype_manual(values=c(&quot;union&quot;=&quot;solid&quot;,
+   #                              &quot;spd&quot;=&quot;solid&quot;,
+    #                             &quot;af_d&quot;=&quot;solid&quot;,
+     #                            &quot;grune&quot;=&quot;solid&quot;,
+      #                           &quot;linke&quot;=&quot;solid&quot;,
+       #                          &quot;fdp&quot;=&quot;solid&quot;))+
+  scale_fill_manual(values=col, aes(alpha=1)) </code></pre>
+<p><img src="/blogs/Beginnings_R_files/figure-html/unnamed-chunk-1-1.png" width="648" style="display: block; margin: auto;" /></p>
+<pre class="r"><code> #fix legend, axes (scale and  ticks), fix colours</code></pre>
+</div>
+<div id="deliverables" class="section level1">
+<h1>Deliverables</h1>
+<p>There is a lot of explanatory text, comments, etc. You do not need these, so delete them and produce a stand-alone document that you could share with someone. Knit the edited and completed R Markdown file as an HTML document (use the “Knit” button at the top of the script editor window) and upload it to Canvas.</p>
+</div>
+<div id="details" class="section level1">
+<h1>Details</h1>
+<ul>
+<li>Who did you collaborate with: TYPE NAMES HERE</li>
+<li>Approximately how much time did you spend on this problem set: ANSWER HERE</li>
+<li>What, if anything, gave you the most trouble: ANSWER HERE</li>
+</ul>
+<p><strong>Please seek out help when you need it,</strong> and remember the <a href="https://mfa2022.netlify.app/syllabus/#the-15-minute-rule" target="_blank">15-minute rule</a>. You know enough R (and have enough examples of code from class and your readings) to be able to do this. If you get stuck, ask for help from others, post a question on Slack– and remember that I am here to help too!</p>
+<blockquote>
+<p>As a true test to yourself, do you understand the code you submitted and are you able to explain it to someone else?</p>
+</blockquote>
+<p>ofc</p>
+</div>
+<div id="rubric" class="section level1">
+<h1>Rubric</h1>
+<p>Check minus (1/5): Displays minimal effort. Doesn’t complete all components. Code is poorly written and not documented. Uses the same type of plot for each graph, or doesn’t use plots appropriate for the variables being analyzed.</p>
+<p>Check (3/5): Solid effort. Hits all the elements. No clear mistakes. Easy to follow (both the code and the output).</p>
+<p>Check plus (5/5): Finished all components of the assignment correctly and addressed both challenges. Code is well-documented (both self-documented and with additional comments as necessary). Used tidyverse, instead of base R. Graphs and tables are properly labelled. Analysis is clear and easy to follow, either because graphs are labeled clearly or you’ve written additional text to describe how you interpret the output.</p>
+</div>

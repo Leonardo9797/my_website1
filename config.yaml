@@ -89,10 +89,10 @@ params:
         subtitle: Index Performance
         title: DJIA 
         url: blogs/risk_return
-      - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Magna
-        url: blogs/magna
+      - image: R_pic.jpg
+        subtitle: The first steps
+        title: Learning R
+        url: blogs/beginnings_R
       - image: pic04.jpg
         subtitle: Nisl Sed Aliquam
         title: Ipsum
