@@ -1,0 +1,74 @@
+---
+title: "My passion for travelling"
+date: '2021-09-30'
+description: All my travels
+output: pdf_document
+image: spices.jpg
+keywords: ''
+slug: travelling
+categories:
+- ''
+- ''
+draft: no
+---
+
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
+
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
+```
+
+
+```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(lubridate)
+library(here)
+library(skimr)
+library(janitor)
+library(vroom)
+library(tidyquant)
+library(rvest)    # scrape websites
+library(purrr)  
+library(lubridate) #to handle dates
+library(ggrepel)
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(gapminder)  # gapminder dataset
+library(here)
+library(janitor)
+```
+
+# My travels
+
+## A famility passionate about travelling
+
+My family has always liked to travel. Besides often travelling to Sardinia, where my mother's family lives, my parents started travelling abroad since my sister and I were very young. understandably, **Europe** has been among the first regions we have visited. **France**, **Spain**, **Germany**, and **United Kingdon** were countries to which we went when my sister and I were very young. Later on, we started making longer and more "exotic" trips, mainly in summer time. The first of these was **India**, where we went when I was just 10. I don't remember much, but I remember clearly a few moement of that travel, such as the elephant ride in the jungle and the tea plantation. Then we traveled to **Seichelles**, staying for two weeks in an amazing island where I saw the most transparent sea of my life. Then, when I was 14, we traveled to China, where the skyscrapers of Shangai and the Terracotta army where the highlights of our visits.
+
+## My first travel alone: Australia
+
+
+When I was 17, I decided to do an exchange in **Australia** for 5 months. This occurred during my penultimate year of high school, and it was a highly impacting experience for me. Spending time away from my family made me grow up immensely and made me become more independent.
+
+## Gap year
+
+Between the end of my high school and the beginning of my university studies, I took a gap year to better understand what I wanted to do and what my true passions were. And so I went back to **Australia** where I studied for the IELTS exam and worked as a waiter, and then I traveled to **Argentina** where I went to learn Spanish since I knew I would have attended IE University in Madrid in the coming year. Both experiences were incredible as I had the chance to learn about different cultures and to visit places I had never imagined to visit before. 
+
+
+
+
+
+
+```{r}
+knitr::include_graphics(here::here("themes","forty","static","img", "iguazu.jpg"), error = FALSE)
+```
+
+

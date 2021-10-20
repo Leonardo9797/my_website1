@@ -54,9 +54,9 @@ params:
       - icon: fa-github
         label: GitHub
         url: https://github.com/Leonardo9797
-      - icon: fa-linkedin
-        label: LinkedIn
-        url: www.linkedin.com/in/leonardoriolo
+     # - icon: fa-linkedin
+    #    label: LinkedIn
+     #   url: https://www.linkedin.com/in/leonardoriolo/
   image: ''
   name: Leonardo Riolo
   navigation:
