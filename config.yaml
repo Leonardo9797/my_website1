@@ -86,15 +86,15 @@ params:
         title: My story
         url: blogs/my_story
         
-      - image: r_pic.jpg
+      - image: programming.jpg
         subtitle: The first steps
         title: Learning R 
-        url: blogs/risk_return
+        url: blogs/programming
         
       - image: pic01.jpg
         subtitle: The first steps
         title: Learning R
-        url: blogs/beginnings_R
+        url: blogs/ipsum
       - image: pic04.jpg
         subtitle: Nisl Sed Aliquam
         title: Ipsum
