@@ -88,7 +88,7 @@ params:
       - image: programming.jpg
         subtitle: The first steps
         title: Learning R 
-        url: blogs/programming
+        url: blogs/beginnings_R
         
       - image: Argentina.jpg
         subtitle: From India to Argentina
