@@ -64,8 +64,6 @@ Between the end of my high school and the beginning of my university studies, I 
 
 
 
-
-
 ```{r}
 
 knitr::include_graphics("/img/iguazu.jpg",error =FALSE)
