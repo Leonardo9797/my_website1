@@ -116,7 +116,7 @@ drinks %>%
 ```
 
 
-From these graphs we can notice that, first of all, countries the drink most beer tend to not be the ones that drink the most wine. Also, I was honestly not expecting a country like Namibia to be at the top of the most beer_servings countries in the world. But as our professor wisely says: "Don't let you bias into the data!"
+From these graphs we can notice that, first of all, countries that drink most beer tend to not be the ones that drink the most wine. Also, I was honestly not expecting a country like Namibia to be at the top of the most beer_servings countries in the world. But as our professor wisely says: "Don't let you bias into the data!"
 
 
 
