@@ -123,13 +123,6 @@ ggplot(mdf, aes(x = end_date, y = value, color = variable, group = variable)) +
   geom_point(alpha = 0.5) +
   geom_ma(ma_fun  = SMA, n = 10, linetype = &quot;solid&quot;) +
   scale_color_manual(values=col) +
-  #scale_linetype_manual(values=c(&quot;union&quot;=&quot;solid&quot;,
-   #                              &quot;spd&quot;=&quot;solid&quot;,
-    #                             &quot;af_d&quot;=&quot;solid&quot;,
-     #                            &quot;grune&quot;=&quot;solid&quot;,
-      #                           &quot;linke&quot;=&quot;solid&quot;,
-       #                          &quot;fdp&quot;=&quot;solid&quot;))+
   scale_fill_manual(values=col, aes(alpha=1)) </code></pre>
 <p><img src="/blogs/Beginnings_R_files/figure-html/unnamed-chunk-1-1.png" width="648" style="display: block; margin: auto;" /></p>
-<pre class="r"><code> #fix legend, axes (scale and  ticks), fix colours</code></pre>
 </div>
